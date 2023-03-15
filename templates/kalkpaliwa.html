@@ -1,0 +1,41 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Paliwa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylekalkpaliwa.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Kalkulator Paliwa</h1>
+    </header>
+    <main>
+        <section>
+            <form action="" method="POST">
+                <label for="dystans">Dystans (w kilometrach):</label>
+                <input type="number" step="0.01" name="dystans" ><br>
+                <label for="sredniespalanie">Średnie spalanie (w litrach):</label>
+                <input type="number" step="0.01" name="srednieSpalanie"><br>
+                <label for="cenapaliwa">Cena Paliwa (w złotówkach):</label>
+                <input type="number" step="0.01" name="cenaPaliwa"><br>
+                <input type="submit" value="Oblicz">
+            </form>
+            {% if dystans %}
+                <p>Dystans: {{dystans}}km</p>
+                <p>Średnie spalanie: {{srednieSpalanie}} l/100km</p>
+                <p>Cena Paliwa: {{cenaPaliwa}}zł</p>
+                <p><b>Koszt przejazdu: {{kosztPrzejazdu}}zł</b></p>
+            {% endif %}
+        </section>
+        <section>
+            <h3>Średnie ceny paliw w Polsce:</h3>
+            <p>Benzyna 95: {{cenyPaliwa[1]}}zł</p>
+            <p>Benzyna 98: {{cenyPaliwa[2]}}zł</p>
+            <p>Diesel: {{cenyPaliwa[3]}}zł</p>
+            <p>Diesel+: {{cenyPaliwa[4]}}zł</p>
+            <p>LPG: {{cenyPaliwa[5]}}zł</p>
+        </section>
+    </main>
+</body>
+</html>
