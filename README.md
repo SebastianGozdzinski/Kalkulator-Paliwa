@@ -5,3 +5,5 @@ Wykorzystane technologie:
 - Python Flask + Jinja
 - Biblioteka Requests
 - HTML/CSS
+
+Strona dostępna pod adresem: <http://sgozdzinski.pythonanywhere.com/>.
